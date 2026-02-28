@@ -329,7 +329,7 @@ body::before {
   color: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
   backdrop-filter: blur(8px);
-   margin-bottom: 80px;
+  margin-bottom: 80px;
 }
 
 .work-sub-desc {

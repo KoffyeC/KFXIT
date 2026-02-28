@@ -28,7 +28,6 @@ body::before {
   align-items: center;
   justify-content: center;
   padding: 0px 20px;
-  
 }
 
 .hero-content {
@@ -113,6 +112,8 @@ body::before {
   text-align: center;
   gap: 1.5rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-container .navbar-menu li a {
@@ -123,7 +124,7 @@ body::before {
   padding: 3px 20px;
   border-radius: 10px;
   border: 3px solid transparent;
-  transition: all 0.7 ease;
+  transition: all 0.7s ease;
   white-space: nowrap;
 }
 
@@ -133,12 +134,62 @@ body::before {
   box-shadow:  2px 2px rgba(255, 255, 255, 0.9);
 }
 
-@media (max-width: 880px){
-  .navbar-container .navbar-menu li a{
-    padding: 3px 3px;
+@media (max-width: 880px) {
+  .navbar-container {
+    padding: 0 1rem;
   }
-} 
+  
+  .navbar-container .navbar-menu {
+    gap: 1rem;
+  }
+  
+  .navbar-container .navbar-menu li a {
+    padding: 3px 10px;
+    font-size: 1.1rem;
+  }
+}
 
+/* Small phones (300px - 480px) */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 0.5rem;
+  }
+  
+  .logo-photo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .navbar-container .navbar-menu {
+    gap: 0.3rem;
+  }
+  
+  .navbar-container .navbar-menu li a {
+    padding: 3px 5px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small phones (300px - 360px) */
+@media (max-width: 360px) {
+  .navbar-container {
+    padding: 0 0.25rem;
+  }
+  
+  .logo-photo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .navbar-container .navbar-menu {
+    gap: 0.2rem;
+  }
+  
+  .navbar-container .navbar-menu li a {
+    padding: 2px 3px;
+    font-size: 0.75rem;
+  }
+}
 
 /* Services Section */
 .offer-section {
@@ -163,7 +214,7 @@ body::before {
 }
 
 .offer-main-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 600;
   color: white;
   margin: 0;
@@ -233,7 +284,6 @@ body::before {
   cursor: pointer;
 }
 
-
 /* Work Section */
 .work-section {
   max-width: 1600px;
@@ -254,7 +304,7 @@ body::before {
 }
 
 .work-main-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 600;
   color: white;
   margin: 0;
@@ -286,8 +336,6 @@ body::before {
    margin-bottom: 80px;
 }
 
-
-
 /* For sale */
 .sale-grid {
   grid-template-columns: repeat(1, 1fr);
@@ -310,7 +358,7 @@ body::before {
 } 
 
 .sale-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 600;
   color: white;
   margin: 0;
@@ -318,7 +366,7 @@ body::before {
 }
 
 .sale-desc {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 100;
   color: white;
   margin: 0;
@@ -334,13 +382,11 @@ body::before {
   border: 3px dashed black;
 }
 
-
 hr {
   max-width: 100%;
   margin: 0 auto;
   border: 0.5px solid rgb(255, 255, 255, 0);
 }
-
 
 /* Footer */
 footer {

@@ -1,400 +1,353 @@
 body {
-      color: black;
-      font-family: Poppins, sans-serif;
+  position: relative;
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden; /* prevents sideways scroll chat gpt*/
 }
 
-  /* Hero Section */
+body::before {
+  content: '';
+  position: fixed; /* 🔥 important change */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(raphael-gb-Lfgu4b_t-3A-unsplash.jpg) no-repeat center center;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1; /* 🔥 keeps it behind everything */
+}
+
+/* Hero Section */
 .hero {
   min-height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  padding: 0px 20px;
-  margin-bottom: 60px;
-}
-
-    .hero-content {
-      max-width: 800px;
-    }
-
-    .hero-title {
-      font-size: 4rem;
-      margin-bottom: 30px;
-      background: black;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    
-    .cta-button {
-      padding: 15px 40px;
-      background-color: black;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
-    }
-
-    .cta-button:hover {
-      transform: scale(1.05);
-    }
-
-
-/* Navigation Bar */
-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: -4px 0px 18px;
-}
-
-
-.nav-links {
-  display: grid;
-  grid-template-columns: repeat(2, auto); /* 🔥 always 2 per row */
-  gap: 10px 30px;
   justify-content: center;
-  margin-top: 10px;
-}
-
-.nav-links a {
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  padding-inline-start: 0;
-}
-
-a {
-  text-decoration: none;
-  color: black;
+  padding: 0px 20px;
   
 }
 
-
-ul {
-  padding-inline-start: 0;
-  margin-top: -10px;
-  margin-bottom: 28px;
+.hero-content {
+  max-width: 800px;
 }
 
-.home {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
+.gs-button {
+  padding: 15px 40px;
+  background-color: white;
   color: black;
   text-decoration: none;
-}
-
-.offer {
-  margin: 2px 0 2px 30px;
-  padding: 0;
-  font-size: 16px;
-  color: black;
-  text-decoration: none;
-}
-
-.work {
-  margin: 2px 0 2px 30px;
-  padding: 0;
-  font-size: 16px;
-  color: black;
-  text-decoration: none;
-}
-
-.sale {
-  margin: 2px 0 2px 30px;
-  padding: 0;
-  font-size: 16px;
-  color: black;
-  text-decoration: none;
-}
-
-
-/* Main */
-.welcome-desc {
-  font-weight: 100;
-  margin: 0 0%;
-  text-align: center; 
-  margin-bottom: 50px;
-  font-size: 26px;
-}
-
-h2 {
-  margin: 0 20%;
-  text-align: center; 
-  margin-bottom: 25px;
-  font-size: 26px;
   font-weight: bold;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
 }
 
+.gs-button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
-/* Logo */
+/* Navigation Bar and Logo*/
 .logo-photo {
   display: block;
   margin: 0 auto;
-  width: 250px;
-  height: 250px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
 }
 
-.logo-name {
-  font-size: 44px;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: transparent;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(70px);
+  color: rgb(0, 0, 0);
+  z-index: 999;
 }
 
-h3 {
-  font-weight: bold;
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem; 
+  max-width: 1600px;
+}
+
+.logo {
+  font-size: 5rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 26px;
+  font-weight: 100;
+  color: white;
+  margin: 0;
+  padding-top: 15px;
+}
+
+.welcome-desc {
+  font-weight: 100;
+  font-size: 26px;
+  color: white;
+  margin: 0;
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+
+.navbar-container .navbar-menu {
+  display: flex;
   text-align: center;
-  background-color: transparent;
-  font-size: 28px;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar-container .navbar-menu li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 3px 20px;
+  border-radius: 10px;
+  border: 3px solid transparent;
+  transition: all 0.7 ease;
+  white-space: nowrap;
+}
+
+.navbar-container .navbar-menu li a:hover {
+  color: white;
+  background: transparent;
+  box-shadow:  2px 2px rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 880px){
+  .navbar-container .navbar-menu li a{
+    padding: 3px 3px;
+  }
+} 
+
+
+/* Services Section */
+.offer-section {
+  max-width: 1600px;
+  padding: 0 20px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+} 
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  color: white;
+}
+
+.offer-main-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  padding-top: 40px;
+} 
+
+.offer-main-desc {
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+  padding-top: 15px;
+}
+
+.offer-card {
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  width: 70%;
+  background: transparent;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  border: 0.1px solid rgb(255, 255, 255);
+  backdrop-filter: blur(8px);
+}
+
+.offer-sub-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+} 
+
+.offer-sub-desc {
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: white;
+  margin: 0;
+  padding-top: 12px;
+} 
+
+.offer-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.offer-features li {
+  margin: 18px 0px;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.btn-get-started {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
   color: black;
-  margin-bottom: 12px;
+  font-size: 1.1rem;
+  background-color: white;
 }
 
-.white-container {
- background-color: white;
- font-family: arial;
- padding: 40px 0;
+.btn-get-started:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }
 
+
+/* Work Section */
+.work-section {
+  max-width: 1600px;
+  padding: 0 20px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+} 
+
+.work-grid {
+  grid-template-columns: repeat(2, 5fr);
+  display: grid;
+  justify-items: center;
+}
+
+.work-main-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  padding-top: 40px;
+}
+
+.work-main-desc {
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+  padding-top: 15px;
+}
+
+.before_after_img {
+  width: 90%;
+}
+
+.work-offer-card {
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  width: 90%;
+  background: transparent;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  border: 0.1px solid rgb(255, 255, 255);
+  backdrop-filter: blur(8px);
+   margin-bottom: 80px;
+}
+
+
+
+/* For sale */
+.sale-grid {
+  grid-template-columns: repeat(1, 1fr);
+  display: grid;
+  justify-items: center;
+  width: 60%;
+}
+
+.sale-section {
+  max-width: 1600px;
+  margin: 30px auto;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px;
+} 
+
+.sale-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  padding-top: 40px;
+}
+
+.sale-desc {
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: white;
+  margin: 0;
+  padding-top: 12px;
+}
 
 /* Horizontal ruler */
-.offerAndFixHr{
-max-width: 60%;
-margin: 0 auto;
-border-radius: 50%;
-margin-top: 50px;
-border: 3px dashed black;
+.offerAndFixHr {
+  max-width: 60%;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: 50px;
+  border: 3px dashed black;
 }
 
 
-hr{
-max-width: 60%;
-margin: 0 auto;
-border-radius: 50%;
-border: 3px dashed white;
+hr {
+  max-width: 100%;
+  margin: 0 auto;
+  border: 0.5px solid rgb(255, 255, 255, 0);
 }
 
 
 /* Footer */
-footer{
+footer {
   margin: 20px 0;
+  color: rgb(255, 255, 255);
 }
 
 .footer-desc {
-text-align: center;
+  text-align: center;
 }
-
-
- /* Offer Section */
-    .offer-section {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    } 
-
-    .offer-main-title {
-      font-size: 44px;
-      margin: 0;
-    } 
-
-    .offer-title-desc{
-      margin-top: 6px;
-      margin-bottom: 0px;
-      color:  rgb(0, 0, 0);
-      text-align: center;
-      font-size: 18px;
-    }
-
-    .offer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 1fr);
-      gap: 30px;
-      justify-items: center;
-    }
-  
-    .offer-card {
-      border-radius: 10px;
-      padding: 30px;
-      text-align: center;
-      width: 70%;
-      border: 1px solid #212d35;
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    .offer-title {
-      color: black;
-      font-weight: bold;
-      font-size: 1.9 rem;
-      margin-bottom: -22px;
-      margin-top: 0px;
-    }
-
-    .offer-desc {
-      margin-top: 30px;
-      margin-bottom: 0px;
-      color:  rgb(0, 0, 0);
-      text-align: center;
-      font-size: 18px;
-    }
-
-    .offer-price {
-      font-size: 2rem;
-      margin-bottom: -20px;
-      font-weight: bold;
-    }
-
-    .offer-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 30px 0;
-      text-align: left;
-    }
-
-    .offer-features li {
-      margin: 18px 0px;
-      font-size: 18px;
-    }
-
-    .btn-get-started {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-size: 1.1rem;
-      cursor: pointer;
-      background-color: black;
-    }
-
-    .btn-get-started:hover {
-      opacity: 0.8;
-    }
-
-
- /* Work Section */
-    .work-section {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    } 
-
-    .work-grid {
-      grid-template-columns: repeat(2, 5fr);
-      display: grid;
-      justify-items: center;
-    }
-
-     .before_after_img {
-      width: 90%;
-      margin-bottom: 80px;
-    }
-
-    .work-title {
-      color: black;
-      font-weight: normal;
-      font-size: 38px;
-      margin-bottom: 0px;
-      margin-top: 0px;
-    }
-
-
-    /* Offer Section*/
-
-    .offer-main-title {
-      font-weight: normal;
-      font-size: 38px;
-      margin: 0;
-    } 
-
-    .offer-title-desc{
-      margin-top: 6px;
-      margin-bottom: 0px;
-      color:  rgb(0, 0, 0);
-      text-align: center;
-      font-size: 18px;
-    }
-
-    .offer-card {
-      border-radius: 10px;
-      padding: 30px;
-      text-align: center;
-      width: 70%;
-      border: 1px solid #212d35;
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    .offer-desc {
-      margin-top: 30px;
-      margin-bottom: 0px;
-      color:  rgb(0, 0, 0);
-      text-align: center;
-      font-size: 18px;
-    }
-
-    .offer-price {
-      font-size: 2rem;
-      margin-bottom: -20px;
-      font-weight: bold;
-    }
-
-    .offer-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 30px 0;
-      text-align: left;
-    }
-
-    .offer-features li {
-      margin: 18px 0;
-      font-size: 18px;
-    }
-
-    .btn-get-started {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-size: 1.1rem;
-      cursor: pointer;
-      background-color: black;
-    }
-
-    .btn-get-started:hover {
-      opacity: 0.8;
-    }
-
-    
-/* For sale */
-    .sale-grid {
-      grid-template-columns: repeat(1, 1fr);
-      display: grid;
-      justify-items: center;
-    }
-
-  .sale-section {
-      max-width: 1200px;
-      margin: 30px auto;
-      width: 85%;
-      padding: 10px;
-    } 
-
-  .sale-title {
-      color: black;
-      font-weight: normal;
-      font-size: 38px;
-      margin-bottom: -20px;
-      margin-top: 0px;
-    }
-
-    .sale-desc {
-      margin-top: 30px;
-      margin-bottom: 0px;
-      color:  rgb(0, 0, 0);
-      text-align: center;
-      font-size: 18px;
-    }

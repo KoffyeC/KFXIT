@@ -12,6 +12,7 @@ body {
   flex-direction: column;
 }
 
+
 .work-page main {
   flex: 1;
   display: flex;
@@ -386,7 +387,7 @@ body::before {
 
     width: min(600px, 90vw);
     aspect-ratio: 1/1;
-    margin: 30px auto;
+    margin: 29px auto;
 }
 
 .image-container {

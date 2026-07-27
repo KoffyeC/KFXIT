@@ -386,7 +386,7 @@ body::before {
 
     width: min(600px, 90vw);
     aspect-ratio: 1/1;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 
 .image-container {
